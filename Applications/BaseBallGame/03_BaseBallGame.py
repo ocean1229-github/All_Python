@@ -3,15 +3,12 @@ def get_score(guesses, solution):
     ball_count = 0
 
     # 여기에 코드를 작성하세요
-    i = 0
-    while i < 3:
-        if(guesses[i] == solution[i]):
-        elif (guesses[i] == solution[i + 1]):
-            strike_count += 1
-            ball_count += 1
-        elif (guesses[i] == solution[i + 2]):
-            ball_count += 1
-        i += 1
+    for index1, value1 in enumerate(guesses):
+        for index2, value2 in enumerate(solution):
+            if(index1 == index2 and value1 == value2):
+                strike_count += 1
+            elif(value1 == value2):
+                ball_count += 1
             
     return strike_count, ball_count
 
